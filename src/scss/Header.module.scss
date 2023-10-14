@@ -1,0 +1,39 @@
+.header{
+    padding: 20px 0;
+    .header__set{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        .wrapp{
+            display: flex;
+            gap: 15px;
+            
+        }
+        .set{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #fff;
+            font-size: 20px;
+            background: #FF7A00;
+            padding: 10px 15px;
+            border-radius: 20px;
+            letter-spacing: 0.3px;
+            span{
+                padding-bottom: 3px;
+            }
+            .cart{
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                color: #fff;
+                font-size: 20px;
+               
+    
+            }
+        }
+    
+    }
+}
+

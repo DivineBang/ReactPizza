@@ -1,0 +1,101 @@
+.card{
+    border: 1px solid #FF7A00;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    .card__wrapp{
+        width: 355px;
+        text-align: center;
+        
+        img{
+            margin: 10px auto;
+        }
+        title{
+            font-size: 20px;  
+            font-weight: 700;
+
+        }
+        .group{
+            border-radius: 20px;
+            background: #EEE;
+            padding: 12px 10px;
+            margin: 22px 0;
+            font-size: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            .board{
+                display: flex;
+                gap: 5px;
+                justify-content: center;
+                li{
+                    padding: 9px 19px;
+                    letter-spacing: 0.3px;
+                    cursor: pointer;
+                }
+                li.active{
+                    border-radius: 10px;
+                    
+                    background: #FFF;
+                }
+            }
+            .sm{
+                display: flex;
+                gap: 17px;
+                justify-content: center;
+                li{
+                    padding: 9px 27px;
+                    letter-spacing: 0.3px;
+                    cursor: pointer;
+                }
+                li.active{
+                    border-radius: 10px;
+                   
+                    background: #FFF;
+                }
+            }
+        }
+        .set{
+            padding: 0 31px 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+            .price{
+                color: #000;
+                font-size: 20px;
+                font-weight: 700;
+             
+            }
+            .btn{
+                display: inline-flex;
+                
+                cursor: pointer;
+                padding: 8px 13px 7px 13px;
+                justify-content: center;
+                align-items: center;
+                gap: 14px;
+                border-radius: 20px;
+                border: 1px solid #FF7A00;
+                background: #FFF;
+                color: #FF7A00;
+                font-weight: 700;
+
+                letter-spacing: 0.3px;
+                .circle{
+                    display: flex;
+                    width: 25px;
+                    height: 25px;
+                    justify-content: center;
+                    padding: 5px  7px;
+                  
+                    background: #FF7A00;
+                    color: #fff;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+
+
+}

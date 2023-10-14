@@ -1,0 +1,41 @@
+.sort {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+
+
+    .hoverText {
+        color: #FF7A00;
+        border-bottom: 1px dotted #FF7A00;
+    
+    }
+
+    .dropdown {
+        width: 100%;
+        display: none;
+        position: absolute;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        border-radius: 5px;
+        background-color: #fff;
+
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+    }
+
+   
+
+    .dropdown li {
+        padding: 10px;
+        color: #FF7A00;
+
+    }
+
+    .dropdown li:hover {
+        background-color: #f0f0f0;
+    }
+}
+.sort:hover .dropdown {
+    display: block;
+}
