@@ -1,0 +1,159 @@
+.cart{
+    padding: 50px 0;
+
+    .cart__set{
+        display: flex;
+    
+        flex-direction: column;
+
+        .trash{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .trashCart{
+                display: flex;
+                gap: 10px;
+            }
+            .trashBox{
+                display: flex;
+                gap: 10px;
+                img{
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+
+        }
+        .pizzaSet{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 50px 0;
+            
+            .pizzaWrapp{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px 30px;
+
+                .pizzas{
+                    display: flex;
+                    align-items: center;
+                    gap: 30px;
+
+                    .pizzaInfo{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 5px;
+
+                        h2{           
+                            font-size: 20px;
+                            font-weight: 700;
+                        }
+                        p{
+                            color: #B21725;            
+                            font-size: 15px;
+                            font-weight: 400;
+                        }
+                    }
+                }
+                .pizzaQuantity{
+                    display: flex;
+                    gap: 20px;
+                    font-weight: 700;
+                    align-items: center;
+
+                    .pizzaMinus{
+                        width: 30px;
+                        height: 30px;
+                        border: 1px solid #FF7A00;
+                        border-radius: 50%;
+                        padding: 4px;
+                        cursor: pointer;
+                    }
+                    .pizzaPlus{
+                        width: 30px;
+                        height: 30px;
+                        border: 1px solid #FF7A00;
+                        border-radius: 50%;
+                        padding: 4px;
+                        cursor: pointer;
+                    }
+                }
+                span{                   
+                    font-size: 20px;   
+                    font-weight: 700;
+                    letter-spacing: 0.3px;
+                }
+                .close{
+                    cursor: pointer;
+                }
+
+            }
+           
+        }
+        .result{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .resultLeft{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                font-size: 25px;
+
+                .resultBtn{
+                    display: flex;
+                    align-items: center;
+                    cursor: pointer;
+                    gap: 10px;     
+                    font-size: 20px;
+                    padding: 13px 22px 13px 21px;
+                    border-radius: 10px;
+                    border: 1px solid #BCBCBC;
+                    color: #BCBCBC;
+
+                    &:hover{
+                        color: #000;
+                        border: 1px solid #000;
+                        path{
+                            fill: #000;
+                        }
+                    }
+                }
+
+            }
+            .resultRight{
+                display: flex;
+                text-align: end;
+                flex-direction: column;
+                gap: 20px;
+
+                h3{                  
+                    font-size: 25px;
+                    letter-spacing: 0.3px;
+                    span{
+                        color: #FF7A00;
+                        font-weight: 700;
+                    }
+                }
+                .payBtn{
+                    color: #FFF;
+                    cursor: pointer;           
+                    font-size: 20px; 
+                    font-weight: 400;
+                    border-radius: 20px;
+                    background: #FF7A00;
+                    border: none;
+                    padding: 13px 52px;
+
+                }
+                
+            }
+        }
+
+    }
+
+}
