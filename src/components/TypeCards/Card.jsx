@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import style from '../scss/Card.module.scss';
+import style from '../../scss/Card.module.scss';
 
-function Card() {
+
+
+function Card({ title, price, imgUrl }) {
   const [activeBord, setActiveBord] = useState(true);
   const [activeSize, setActiveSize] = useState('26');
 
@@ -13,11 +15,23 @@ function Card() {
     setActiveSize(size);
   };
 
+  /* Счетчик в кнопке  */
+
+  const [count, setCount] = useState(0);
+
+  const handleIncrement = () => {
+    if (count < 99) {
+      setCount(count + 1);
+    }
+  };
+  
+
+
   return (
     <div className={style.card}>
       <div className={style.card__wrapp}>
-        <img src="./img/pizza-200.png" alt="pizza" />
-        <h3 className={style.title}>Барбекю піцца</h3>
+        <img src={imgUrl} alt="pizza" />
+        <h3 className={style.title}>{title}</h3>
         <div className={style.group}>
           <ul className={style.board}>
             <li className={activeBord ? style.active : ''} onClick={handleBordClick}>
@@ -28,7 +42,7 @@ function Card() {
             </li>
           </ul>
           <ul className={style.sm}>
-            <li className={activeSize === '26' ? style.active : ''} onClick={() => handleSizeClick('26')}>
+            <li className={activeSize === '26' ? style.active : '' } onClick={() => handleSizeClick('26')}>
               26 см
             </li>
             <li className={activeSize === '30' ? style.active : ''} onClick={() => handleSizeClick('30')}>
@@ -40,10 +54,10 @@ function Card() {
           </ul>
         </div>
         <div className={style.set}>
-          <p className={style.price}>758 ₴</p>
-          <button className={style.btn}>
+          <p className={style.price}>{price} ₴</p>
+          <button className={style.btn} onClick={handleIncrement}>
             <p>+ Додати</p>
-            <div className={style.circle}>0</div>
+            <div className={style.circle}>{count}</div>
           </button>
         </div>
       </div>

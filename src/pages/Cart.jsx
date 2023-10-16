@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import style from '../scss/Cart.module.scss'
 import {Link} from 'react-router-dom'
 
+
+
+
 export const Cart = () => {
   
   const [quantity, setQuantity] = useState(1);
@@ -36,7 +39,7 @@ export const Cart = () => {
 
               </div>
               <div className={style.trashBox}>
-                <img src="./img/trash.svg" alt="trash" />
+                <img src='./img/trash.svg' alt="trash" />
                 <p>Очистити кошик</p>
               </div>
 

@@ -1,49 +1,26 @@
 import React from 'react';
-import style from "../scss/Categories.module.scss";
+import style from '../scss/Categories.module.scss';
 
 function Categories({ activeComponent, onCategoryChange }) {
-  const isAllActive = activeComponent === 'all';
-  const isMeatActive = activeComponent === 'meat';
-  const isVegetarianActive = activeComponent === 'vegetarian';
-  const isGrillianActive = activeComponent === 'grill';
-  const isCalzoneActive = activeComponent === 'calzone';  
+  const categories = [
+    { label: 'Всі', value: 'all' },
+    { label: 'Мясні', value: 'meat' },
+    { label: 'Вегетаріанські', value: 'vegetarian' },
+    { label: 'Гриль', value: 'grill' },
+    { label: 'Кальцоне', value: 'calzone' },
+  ];
+
   return (
     <ul className={style.menu}>
-      <li
-        onClick={() => onCategoryChange('all')}
-        className={`${style.menuItem} ${isAllActive ? style.active : ''}`}
-       
-      >
-        Всі
-      </li>
-      <li
-        onClick={() => onCategoryChange('meat')}
-        className={`${style.menuItem} ${isMeatActive ? style.active : ''}`}
-       
-      >
-        Мясні
-      </li>
-      <li
-        onClick={() => onCategoryChange('vegetarian')}
-        className={`${style.menuItem} ${isVegetarianActive ? style.active : ''}`}
-       
-      >
-        Вегетаріанські
-      </li>
-      <li
-        onClick={() => onCategoryChange('grill')}
-        className={`${style.menuItem} ${isGrillianActive ? style.active : ''}`}
-       
-      >
-        Гриль
-      </li>
-      <li
-        onClick={() => onCategoryChange('calzone')}
-        className={`${style.menuItem} ${isCalzoneActive ? style.active : ''}`}
-       
-      >
-        Кальцоне
-      </li>
+      {categories.map((category) => (
+        <li
+          key={category.value}
+          onClick={() => onCategoryChange(category.value)}
+          className={`${style.menuItem} ${activeComponent === category.value ? style.active : ''}`}
+        >
+          {category.label}
+        </li>
+      ))}
     </ul>
   );
 }
