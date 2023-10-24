@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import style from '../../scss/Card.module.scss';
+import style from '../scss/Card.module.scss';
 
 
 
