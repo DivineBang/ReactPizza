@@ -2,37 +2,37 @@
     {
       "title": "Барбекю",
       "price": 120,
-      "imgUrl": "./img/pizza-200.png",
+      "img": "./img/pizza-200.png",
       "id": "1"
     },
     {
       "title": "Маргарита",
       "price": 149,
-      "imgUrl": "./img/pizza-200.png",
+      "img": "./img/pizza-200.png",
       "id": "2"
     },
     {
       "title": "Чотири сира",
       "price": 299,
-      "imgUrl": "./img/pizza-200.png",
+      "img": "./img/pizza-200.png",
       "id": "3"
     },
     {
       "title": "Мисливська",
       "price": 156,
-      "imgUrl": "./img/pizza-200.png",
+      "img": "./img/pizza-200.png",
       "id": "4"
     },
     {
       "title": "Гавайська",
       "price": 139,
-      "imgUrl": "./img/pizza-200.png",
+      "img": "./img/pizza-200.png",
       "id": "5"
     },
     {
       "title": "Американа",
       "price": 210,
-      "imgUrl": "./img/pizza-200.png",
+      "img": "./img/pizza-200.png",
       "id": "6"
     }
   ]

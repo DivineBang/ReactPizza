@@ -3,25 +3,25 @@
     {
       "title": "Чотири сира",
       "price": 299,
-      "imgUrl": "./img/pizza-200.png",
+      "img": "./img/pizza-200.png",
       "id": "1"
     },
     {
       "title": "Мисливська",
       "price": 156,
-      "imgUrl": "./img/pizza-200.png",
+      "img": "./img/pizza-200.png",
       "id": "2"
     },
     {
       "title": "Гавайська",
       "price": 139,
-      "imgUrl": "./img/pizza-200.png",
+      "img": "./img/pizza-200.png",
       "id": "3"
     },
     {
       "title": "Американа",
       "price": 210,
-      "imgUrl": "./img/pizza-200.png",
+      "img": "./img/pizza-200.png",
       "id": "4"
     }
   ]

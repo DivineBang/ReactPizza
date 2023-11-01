@@ -3,7 +3,7 @@ import style from '../scss/Card.module.scss';
 
 
 
-function Card({ title, price, imgUrl }) {
+function Card({ img,price,title,addCard }) {
   const [activeBord, setActiveBord] = useState(true);
   const [activeSize, setActiveSize] = useState('26');
 
@@ -15,22 +15,11 @@ function Card({ title, price, imgUrl }) {
     setActiveSize(size);
   };
 
-  /* Счетчик в кнопке  */
-
-  const [count, setCount] = useState(0);
-
-  const handleIncrement = () => {
-    if (count < 99) {
-      setCount(count + 1);
-    }
-  };
-  
-
 
   return (
-    <div className={style.card}>
+    <div  className={style.card}>
       <div className={style.card__wrapp}>
-        <img src={imgUrl} alt="pizza" />
+        <img src={img} alt="pizza" />
         <h3 className={style.title}>{title}</h3>
         <div className={style.group}>
           <ul className={style.board}>
@@ -55,9 +44,9 @@ function Card({ title, price, imgUrl }) {
         </div>
         <div className={style.set}>
           <p className={style.price}>{price} ₴</p>
-          <button className={style.btn} onClick={handleIncrement}>
+          <button className={style.btn} onClick={() => addCard({ title , price, img})}>
             <p>+ Додати</p>
-            <div className={style.circle}>{count}</div>
+            
           </button>
         </div>
       </div>

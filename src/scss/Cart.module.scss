@@ -42,6 +42,10 @@
                     align-items: center;
                     gap: 30px;
 
+                    .pizzaImg{
+                        width: 80px;
+                        height: 80px;
+                    }
                     .pizzaInfo{
                         display: flex;
                         flex-direction: column;

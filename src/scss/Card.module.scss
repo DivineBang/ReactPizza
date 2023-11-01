@@ -70,6 +70,10 @@
             .btn{
                 display: inline-flex;
                 
+                &:hover{
+                    color: #fff;
+                    background: #FF7A00;
+                }
                 cursor: pointer;
                 padding: 8px 13px 7px 13px;
                 justify-content: center;

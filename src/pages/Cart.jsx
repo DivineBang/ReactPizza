@@ -1,32 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect , useContext} from 'react';
 import style from '../scss/Cart.module.scss'
 import {Link} from 'react-router-dom'
 
-
+import AppContext from '../context';
 
 
 export const Cart = () => {
   
-  const [quantity, setQuantity] = useState(1);
+  //контектс 
+  const { cartItems, deleteFromCart } = useContext(AppContext);
+  const [cartData, setCartData] = useState(cartItems); // Используйте state для отслеживания изменений
 
-  const handleMinusClick = () => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
-    }
+  useEffect(() => {
+    setCartData(cartItems); // Обновите состояние, когда данные в контексте меняются
+  }, [cartItems]);
+
+  const handleDelete = (itemId) => {
+    deleteFromCart(itemId); // Удалите элемент из контекста
+    setCartData(cartData.filter(item => item.id !== itemId)); // Удалите элемент из состояния
   };
-
-  const handlePlusClick = () => {
-    setQuantity(quantity + 1);
-  };
-
 
   return (
     <div className={style.cart}>
       <div className="container">
         <div className={style.cart__set}>
-          <div className={style.pizzaWrapp}>
-            
-          </div>
+          
             <div className={style.trash}>
 
               <div className={style.trashCart}>
@@ -44,45 +42,69 @@ export const Cart = () => {
               </div>
 
             </div>
+            {
+             cartItems.length > 0 ?      
+            (
+              <div className={style.pizzaSet}>
+              {cartItems.map((cardInCart) =>(
+                    <div key={cardInCart.id}  className={style.pizzaWrapp} >
+                      <div className={style.pizzas}>
+                        <div className={style.pizzaImg}>
+                          <img src={cardInCart.img} alt="" />
+                        </div>
+                        <div className={style.pizzaInfo}>
+                          <h2>
+                            {cardInCart.title}
+                          </h2>
+                          <p>Звичайний бортик, 26 см</p>
+                        </div>
+                      </div>
+      
+                      <div className={style.pizzaQuantity}>
+                        <div className={style.pizzaMinus} >
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.23804 10H14.7618" stroke="#FF7A00" strokeWidth="0.952381" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </div>
+                        <p>0</p>
+                        <div className={style.pizzaPlus} >
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 10.5C4.86739 10.5 4.74021 10.4473 4.64645 10.3536C4.55268 10.2598 4.5 10.1326 4.5 10C4.5 9.86739 4.55268 9.74021 4.64645 9.64645C4.74021 9.55268 4.86739 9.5 5 9.5H15C15.1326 9.5 15.2598 9.55268 15.3536 9.64645C15.4473 9.74021 15.5 9.86739 15.5 10C15.5 10.1326 15.4473 10.2598 15.3536 10.3536C15.2598 10.4473 15.1326 10.5 15 10.5H5Z" fill="#FF7A00"/>
+                            <path d="M9.5 5C9.5 4.86739 9.55268 4.74021 9.64645 4.64645C9.74021 4.55268 9.86739 4.5 10 4.5C10.1326 4.5 10.2598 4.55268 10.3536 4.64645C10.4473 4.74021 10.5 4.86739 10.5 5V15C10.5 15.1326 10.4473 15.2598 10.3536 15.3536C10.2598 15.4473 10.1326 15.5 10 15.5C9.86739 15.5 9.74021 15.4473 9.64645 15.3536C9.55268 15.2598 9.5 15.1326 9.5 15V5Z" fill="#FF7A00"/>
+                          </svg>
+                        </div>
+                      </div>
+      
+                      <span>
+                        {cardInCart.price} 
+                      </span>
+      
+                      <div onClick={() => handleDelete(cardInCart.id)} className={style.close}>
+                        <img src="./img/close-30.svg" alt="" />
+                      </div>
+      
+                    </div>                      
+
+                )) 
+              }  
+            </div> 
+            ) : (
+
             <div className={style.pizzaSet}>
+              <h2>
+                Корзина порожня
+              </h2>
+              <p>
+                Додайте хочаб один товар...
+              </p>
+             
+            </div>)
 
-              <div className={style.pizzaWrapp}>
-                <div className={style.pizzas}>
-                  <div className={style.pizzaImg}>
-                    <img src="./img/pizza-80.png" alt="" />
-                  </div>
-                  <div className={style.pizzaInfo}>
-                    <h2>Барбекю піцца</h2>
-                    <p>Звичайний бортик, 26 см</p>
-                  </div>
-                </div>
-
-                <div className={style.pizzaQuantity}>
-                  <div className={style.pizzaMinus} onClick={handleMinusClick}>
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M5.23804 10H14.7618" stroke="#FF7A00" strokeWidth="0.952381" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </div>
-                  <p>{quantity}</p>
-                  <div className={style.pizzaPlus} onClick={handlePlusClick}>
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M5 10.5C4.86739 10.5 4.74021 10.4473 4.64645 10.3536C4.55268 10.2598 4.5 10.1326 4.5 10C4.5 9.86739 4.55268 9.74021 4.64645 9.64645C4.74021 9.55268 4.86739 9.5 5 9.5H15C15.1326 9.5 15.2598 9.55268 15.3536 9.64645C15.4473 9.74021 15.5 9.86739 15.5 10C15.5 10.1326 15.4473 10.2598 15.3536 10.3536C15.2598 10.4473 15.1326 10.5 15 10.5H5Z" fill="#FF7A00"/>
-                      <path d="M9.5 5C9.5 4.86739 9.55268 4.74021 9.64645 4.64645C9.74021 4.55268 9.86739 4.5 10 4.5C10.1326 4.5 10.2598 4.55268 10.3536 4.64645C10.4473 4.74021 10.5 4.86739 10.5 5V15C10.5 15.1326 10.4473 15.2598 10.3536 15.3536C10.2598 15.4473 10.1326 15.5 10 15.5C9.86739 15.5 9.74021 15.4473 9.64645 15.3536C9.55268 15.2598 9.5 15.1326 9.5 15V5Z" fill="#FF7A00"/>
-                    </svg>
-                  </div>
-                </div>
-
-                <span>
-                  758 ₴ 
-                </span>
-
-                <div className={style.close}>
-                  <img src="./img/close-30.svg" alt="" />
-                </div>
-
-              </div> 
+          }
               
-            </div>
+               
+            
+            
             <div className={style.result}>
           
               <div className={style.resultLeft}>
