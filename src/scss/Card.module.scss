@@ -2,11 +2,15 @@
     border: 1px solid #FF7A00;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
     .card__wrapp{
-        width: 355px;
+        width: 344px;
         text-align: center;
         
+        
         img{
+            width: 200px;
+            height: 200px;
             margin: 10px auto;
         }
         title{

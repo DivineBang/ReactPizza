@@ -25,7 +25,7 @@ function Header() {
                 </div>
                 <div className={style.set}>
                     <p>
-                        758 ₴ 
+                        0 ₴ 
                     </p>
                     <span>
                         |

@@ -101,15 +101,12 @@ export const Cart = () => {
             </div>)
 
           }
-              
-               
-            
-            
+                   
             <div className={style.result}>
           
               <div className={style.resultLeft}>
 
-                <h3>Кількість піцц :<span> 4 </span> </h3>
+                <h3>Кількість піцц :<span> 0 </span> </h3>
                 <Link to={'/'}>
                   <button className={style.resultBtn}>
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -122,7 +119,7 @@ export const Cart = () => {
           
               <div className={style.resultRight}>
 
-                <h3> До сплати: <span> 758 ₴ </span></h3>
+                <h3> До сплати: <span> 0 ₴ </span></h3>
                 <button className={style.payBtn}>
                   Оплатити зараз
                 </button>

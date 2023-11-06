@@ -2,25 +2,25 @@
     {
      "title": "Барбекю",
      "price": 120,
-     "img": "./img/pizza-200.png",
+     "img": "./img/pizza-bar.jpg",
      "id": "1"
     },
     {
      "title": "Мисливська",
      "price": 156,
-     "img": "./img/pizza-200.png",
+     "img": "./img/pizza-m.jpg",
      "id": "2"
     },
     {
      "title": "Американа",
      "price": 210,
-     "img": "./img/pizza-200.png",
+     "img": "./img/pizza-a.jpg",
      "id": "3"
     },
     {
         "title": "Мисливська",
         "price": 156,
-        "img": "./img/pizza-200.png",
+        "img": "./img/pizza-m.jpg",
         "id": "4"
     }
 ]

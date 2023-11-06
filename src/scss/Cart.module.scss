@@ -3,7 +3,7 @@
 
     .cart__set{
         display: flex;
-    
+      
         flex-direction: column;
 
         .trash{
@@ -157,7 +157,42 @@
                 
             }
         }
-
+        
+       
     }
 
+}
+/*458-575*/
+@media screen and (max-width:575px){
+    .pizzaSet{
+        text-align: center;
+        .pizzaWrapp{
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+       
+    }
+    .result{
+        flex-wrap: wrap;
+        gap: 40px;
+        align-items: center;
+        justify-content: center !important;
+        text-align: center;
+        .resultRight{
+            text-align: center !important;
+        }
+        
+    }
+    
+    
+}
+/*375-457*/
+@media screen and (max-width:457px){
+    .trash{
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center !important;
+    }
+   
 }
